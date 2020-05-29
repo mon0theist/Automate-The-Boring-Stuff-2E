@@ -1,6 +1,6 @@
 #! /usr/bin/python
 #
-# ATBS - Chapter 3 - Collatz Sequence
+# ATBS2E - Chapter 3 - Collatz Sequence
 #
 # Write a function named collatz() that has one parameter named number. If number
 # is even, then collatz() should print number // 2 and return this value. If
