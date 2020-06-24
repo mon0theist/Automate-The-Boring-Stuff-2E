@@ -30,8 +30,10 @@
 import random
 
 number_of_streaks = 0
+sample_size = 10000
 
-for experiment_number in range(10):
+for experiment_number in range(sample_size):
+    print('Experiment Number ' + str(experiment_number))
     # Code that creates a list of 100 'heads' or 'tails' values.
     flips_list = []
     for i in range(100):
@@ -45,17 +47,19 @@ for experiment_number in range(10):
     # Code that checks if there is a streak of 6 heads or tails in a row.
     # iterate through flips list
     counter = 1
-    for i in range(len(flips_list)):
-        if flips_list[i] == flips_list[x + 1]:
+    for i in range(len(flips_list) - 1):
+        if flips_list[i] == flips_list[i + 1]:
             # increase counter by 1
             counter += 1
             if counter == 6:
                 # 6 count is a streak
                 number_of_streaks += 1
+                print('6 streak!')
                 # reset counter after streak
                 counter = 1
-        elif flips_list[i] != flips_list[x + 1]:
+        elif flips_list[i] != flips_list[i + 1]:
             # reset counter
             counter = 1
 
-print('Chance of streak: %s%%' % (numberOfStreaks / 100))
+print('Total Streaks: ' + str(number_of_streaks))
+print('Chance of streak: %s%%' % (number_of_streaks / sample_size))
