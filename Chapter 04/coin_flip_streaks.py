@@ -43,5 +43,19 @@ for experiment_number in range(10):
     # print(flips)
 
     # Code that checks if there is a streak of 6 heads or tails in a row.
+    # iterate through flips list
+    counter = 1
+    for i in range(len(flips_list)):
+        if flips_list[i] == flips_list[x + 1]:
+            # increase counter by 1
+            counter += 1
+            if counter == 6:
+                # 6 count is a streak
+                number_of_streaks += 1
+                # reset counter after streak
+                counter = 1
+        elif flips_list[i] != flips_list[x + 1]:
+            # reset counter
+            counter = 1
 
 print('Chance of streak: %s%%' % (numberOfStreaks / 100))
